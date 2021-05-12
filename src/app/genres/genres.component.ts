@@ -3,37 +3,37 @@ import { Component, OnInit } from '@angular/core';
 declare const M;
 
 @Component({
-  selector: 'app-categories',
+  selector: 'app-genres',
   templateUrl: './genres.component.html',
   styleUrls: ['./genres.component.css']
 })
 export class GenresComponent implements OnInit {
-  public categories: any[];
-  public categoryName: string;
-  public categoryDescription: string;
-  constructor(private categoryService: GenreService) { }
+  public genres: any[];
+  public genreName: string;
+  public genreDescription: string;
+  constructor(private genreService: GenreService) { }
 
-  createCategory(): any {
-    const newCategory = {
-      name: this.categoryName,
-      description: this.categoryDescription
+  createGenre(): any {
+    const newGenre = {
+      name: this.genreName,
+      description: this.genreDescription
     };
-    this.categoryService.createCategory(newCategory).subscribe(response => {
-      this.categories = [...this.categories, response];
+    this.genreService.createGenre(newGenre).subscribe(response => {
+      this.genres = [...this.genres, response];
       console.log(response);
     }, err => console.log(err));
   }
-  getCategories(): any {
-    this.categoryService.getCategories().subscribe(response => {
-      this.categories = response;
+  getGenres(): any {
+    this.genreService.getGenres().subscribe(response => {
+      this.genres = response;
     }, err => console.log(err));
   }
 
   ngOnInit(): void {
-    this.getCategories();
+    this.getGenres();
 
     if (!localStorage.getItem('currentUser')) {
-      const toastHTML = '<span>You must login to see your categories</span>';
+      const toastHTML = '<span>You must login to see your genres</span>';
       M.toast({html: toastHTML});
     }
   }

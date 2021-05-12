@@ -1,18 +1,18 @@
 <h4>Create New Genre</h4>
-<form (submit)="createCategory()">
-  <input [(ngModel)]="categoryName" name="categoryName" type="text" placeholder="name" />
-  <input [(ngModel)]="categoryDescription" name="categoryDescription" type="text" placeholder="description" />
+<form (submit)="createGenre()">
+  <input [(ngModel)]="genreName" name="genreName" type="text" placeholder="name" />
+  <input [(ngModel)]="genreDescription" name="genreDescription" type="text" placeholder="description" />
   <input type="submit"/>
 </form>
 
-<div *ngIf="categories">
+<div *ngIf="genres">
   <h4>All Genres</h4>
   <ul>
-    <li *ngFor="let category of categories">
-      {{category.name}} -- {{category.description}}
-      <button (click)="deleteCategory(category)">delete</button>
-      <form (submit)="createRecipe(category)">
-        <input [(ngModel)]="recipeName" name="recipeName" type="text" placeholder="new recipe" />
+    <li *ngFor="let genre of genres">
+      {{genre.name}} -- {{genre.description}}
+      <button (click)="deleteGenre(genre)">delete</button>
+      <form (submit)="createRecipe(genre)">
+        <input [(ngModel)]="songName" name="songName" type="text" placeholder="new song" />
         <input type="submit"/>
       </form>
     </li>

@@ -11,7 +11,7 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'categories',
+    path: 'genres',
     component: GenresComponent
   },
   {

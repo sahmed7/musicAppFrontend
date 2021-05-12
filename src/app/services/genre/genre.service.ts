@@ -10,8 +10,8 @@ const herokuUrl = 'https://damp-refuge-90630.herokuapp.com';
 export class GenreService {
   constructor(private http: HttpClient) { }
 
-  createCategory(newCategory): any {
-    console.log(newCategory);
+  createGenre(newGenre): any {
+    console.log(newGenre);
     const token = localStorage.getItem('token');
     const requestOptions = {
       headers: new HttpHeaders({
@@ -19,9 +19,9 @@ export class GenreService {
       }),
     };
     return this.http
-      .post(`${herokuUrl}/api/categories/`, newCategory, requestOptions);
+      .post(`${herokuUrl}/api/genres/`, newGenre, requestOptions);
   }
-  getCategories(): any {
+  getGenres(): any {
     const token = localStorage.getItem('token');
     const requestOptions = {
       headers: new HttpHeaders({
@@ -29,6 +29,6 @@ export class GenreService {
       }),
     };
     return this.http
-      .get(`${herokuUrl}/api/categories`, requestOptions);
+      .get(`${herokuUrl}/api/genres`, requestOptions);
   }
 }
