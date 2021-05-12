@@ -10,7 +10,6 @@ export class AppComponent {
   currentUser: any;
 
   constructor(private userService: UserService) { }
-
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit(): void {
     this.userService.searchSubject.subscribe(currentUser => {

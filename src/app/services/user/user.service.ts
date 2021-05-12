@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
-const herokuUrl = 'https://salty-hollows-67767.herokuapp.com';
+const herokuUrl = 'https://damp-refuge-90630.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,11 @@ export class UserService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  registerUser(newUser): any {
+  registerUser(newUser): void {
     console.log(newUser);
-    return this.http
+    this.http
       .post(`${herokuUrl}/auth/users/register`, newUser)
+      .subscribe(response => console.log(response), err => console.log(err));
   }
 
   loginUser(user): void {
