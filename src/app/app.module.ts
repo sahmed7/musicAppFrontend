@@ -10,6 +10,7 @@ import { GenresComponent } from './genres/genres.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
+import { GenreComponent } from './genre/genre.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LogoutComponent } from './logout/logout.component';
     GenresComponent,
     LoginComponent,
     HomeComponent,
-    LogoutComponent
+    LogoutComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<div *ngIf="genre">
+  <h4>{{genre.name}}: {{genre.description}}</h4>
+</div>
+<div class="row">
+  <div class="col s1"></div>
+  <div class="col s4">
+    <ul class="collection">
+      <li class="collection-item" *ngFor="let song of genre.songList">
+        {{song.title}}
+        <a class="secondary-content" (click)="deleteSong(song)">delete</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col s2"></div>
+  <form class="col s4" (submit)="createSong()">
+    <div class="row">
+      <h6>New Song for {{genre.name}}</h6>
+      <input [(ngModel)]="songName" name="songName" type="text" placeholder="songName" />
+      <input [(ngModel)]="artistName" name="artistName" type="text" placeholder="artistName" />
+      <input [(ngModel)]="year" name="year" type="date" placeholder="date" />
+      <!--      <input [(ngModel)]="songSteps" name="songSteps" type="text" placeholder="songSteps" />-->
+      <input class="waves-effect waves-light btn" type="submit"/>
+    </div>
+  </form>
+  <div class="col s1"></div>
+</div>
