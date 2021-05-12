@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { CategoriesComponent } from './categories/categories.component';
+import { GenresComponent } from './genres/genres.component';
 import { SignupComponent } from './signup/signup.component';
 import {LogoutComponent} from './logout/logout.component';
 
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoriesComponent
+    component: GenresComponent
   },
   {
     path: 'login',

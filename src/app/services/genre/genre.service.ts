@@ -7,7 +7,7 @@ const herokuUrl = 'https://damp-refuge-90630.herokuapp.com';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class GenreService {
   constructor(private http: HttpClient) { }
 
   createCategory(newCategory): any {

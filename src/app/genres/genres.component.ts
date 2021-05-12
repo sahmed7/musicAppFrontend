@@ -1,17 +1,17 @@
-import { CategoryService } from 'src/app/services/category/category.service';
+import { GenreService } from 'src/app/services/genre/genre.service';
 import { Component, OnInit } from '@angular/core';
 declare const M;
 
 @Component({
   selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  templateUrl: './genres.component.html',
+  styleUrls: ['./genres.component.css']
 })
-export class CategoriesComponent implements OnInit {
+export class GenresComponent implements OnInit {
   public categories: any[];
   public categoryName: string;
   public categoryDescription: string;
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: GenreService) { }
 
   createCategory(): any {
     const newCategory = {
